@@ -44,5 +44,4 @@ The shell should allow users to write shell scripts,
 which are text files that contain a series of commands to be executed by the shell.
 
 These are the main components to consider when building a simple shell.
- You can also consider adding other features, such as support for command history, background processes, and pipes.
 
