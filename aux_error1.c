@@ -1,7 +1,5 @@
 #include "main.h"
 
-
-
 /**
  * strcat_cd - function that concatenates the message for cd error
  *
@@ -31,9 +29,12 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 		illegal_flag[1] = datash->args[1][1];
 		illegal_flag[2] = '\0';
 		_strcat(error, illegal_flag);
+		
 		free(illegal_flag);
 	}
+	
 	else
+		
 	{
 		_strcat(error, datash->args[1]);
 	}
@@ -42,8 +43,6 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 	_strcat(error, "\0");
 	return (error);
 }
-
-
 
 /**
  * error_get_cd - error message for cd command in get_cd
