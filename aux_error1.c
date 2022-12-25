@@ -14,6 +14,7 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 {
 	char *illegal_flag;
 	
+	
 	_strcpy(error, datash->av[0]);
 	_strcat(error, ": ");
 	_strcat(error, ver_str);
@@ -43,7 +44,7 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
  * @datash: data relevant (directory)
  * Return: Error message
  */
-char *error_get_cd(data_shell *datash
+char *error_get_cd(data_shell *datash)
 {
 	int length, len_id;
 	char *error, *ver_str, *msg;
