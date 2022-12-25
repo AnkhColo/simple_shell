@@ -58,13 +58,10 @@ char *error_get_cd(data_shell *datash
 		msg = ": can't cd to ";
 		len_id = _strlen(datash->args[1]);
 	}
-	
 	length = _strlen(datash->av[0]) + _strlen(datash->args[0]);
 	length += _strlen(ver_str) + _strlen(msg) + len_id + 5;
 	error = malloc(sizeof(char) * (length + 1));
-	
 	if (error == 0)
-	
 	{
 		free(ver_str);
 		return (NULL);
@@ -79,7 +76,6 @@ char *error_get_cd(data_shell *datash
  * @datash: data relevant (counter, arguments)
  * Return: Error message
  */
-
 char *error_not_found(data_shell *datash)
 {
 
@@ -89,10 +85,8 @@ char *error_not_found(data_shell *datash)
 	
 	ver_str = aux_itoa(datash->counter);
 	length = _strlen(datash->av[0]) + _strlen(ver_str);
-
 	length += _strlen(datash->args[0]) + 16;
 	error = malloc(sizeof(char) * (length + 1));
-
 	if (error == 0)
 
 	{
@@ -134,7 +128,6 @@ char *error_exit_shell(data_shell *datash)
 	length = _strlen(datash->av[0]) + _strlen(ver_str);
 	length += _strlen(datash->args[0]) + _strlen(datash->args[1]) + 23;
 	error = malloc(sizeof(char) * (length + 1));
-
 	if (error == 0)
 	{
 
