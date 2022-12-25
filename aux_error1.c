@@ -68,7 +68,6 @@ char *error_get_cd(data_shell *datash)
 		return (NULL);
 	}
 	error = strcat_cd(datash, msg, error, ver_str);
-
 	free(ver_str);
 	return (error);
 }
