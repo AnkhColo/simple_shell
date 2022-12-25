@@ -43,7 +43,7 @@ void bring_line(char **lineptr, size_t *n, char *buffer, size_t j)
 ssize_t get_line(char **lineptr, size_t *n, FILE *stream)
 {
 	int i;
-	
+
 	static ssize_t input;
 	ssize_t retval;
 	char *buffer;
@@ -67,7 +67,6 @@ ssize_t get_line(char **lineptr, size_t *n, FILE *stream)
 			return (-1);
 		}
 		if (i == 0 && input != 0)
-
 		{
 			input++;
 			break;

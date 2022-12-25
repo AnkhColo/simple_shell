@@ -83,7 +83,7 @@ typedef struct r_var_list
 	int len_var;
 	char *val;
 	int len_val;
-	
+
 	struct r_var_list *next;
 } r_var;
 

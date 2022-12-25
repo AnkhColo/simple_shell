@@ -10,7 +10,6 @@
 
 void cd_dot(data_shell *datash)
 {
-
 	char pwd[PATH_MAX];
 	char *dir, *cp_pwd, *cp_strtok_pwd;
 
@@ -20,7 +19,6 @@ void cd_dot(data_shell *datash)
 	dir = datash->args[1];
 	if (_strcmp(".", dir) == 0)
 	{
-
 		set_env("PWD", cp_pwd, datash);
 		free(cp_pwd);
 		return;
@@ -30,27 +28,22 @@ void cd_dot(data_shell *datash)
 		free(cp_pwd);
 		return;
 	}
-
 	cp_strtok_pwd = cp_pwd;
 	rev_string(cp_strtok_pwd);
 	cp_strtok_pwd = _strtok(cp_strtok_pwd, "/");
 	if (cp_strtok_pwd != NULL)
 	{
-
 		cp_strtok_pwd = _strtok(NULL, "\0");
 
 		if (cp_strtok_pwd != NULL)
 			rev_string(cp_strtok_pwd);
-
 	}
 	if (cp_strtok_pwd != NULL)
 	{
 		chdir(cp_strtok_pwd);
 		set_env("PWD", cp_strtok_pwd, datash);
 	}
-
 	else
-
 	{
 		chdir("/");
 		set_env("PWD", "/", datash);
@@ -58,7 +51,6 @@ void cd_dot(data_shell *datash)
 	datash->status = 0;
 	free(cp_pwd);
 }
-
 /**
  * cd_to - changes to a directory give
  * by the user
@@ -74,7 +66,7 @@ void cd_to(data_shell *datash)
 	char *dir, *cp_pwd, *cp_dir;
 
 	getcwd(pwd, sizeof(pwd));
-	
+
 	dir = datash->args[1];
 
 	if (chdir(dir) == -1)

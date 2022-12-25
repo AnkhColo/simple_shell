@@ -15,7 +15,7 @@ sep_list *add_sep_node_end(sep_list **head, char sep)
 {
 
 	sep_list *new, *temp;
-	
+
 	new = malloc(sizeof(sep_list));
 	if (new == NULL)
 
@@ -83,7 +83,6 @@ void free_sep_list(sep_list **head)
 
 
 /**
-
  * add_line_node_end - adds a command line at the end
  * of a line_list.
  * @head: head of the linked list.

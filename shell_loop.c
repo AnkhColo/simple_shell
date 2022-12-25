@@ -55,9 +55,9 @@ void shell_loop(data_shell *datash)
 	while (loop == 1)
 	{
 		write(STDIN_FILENO, "^-^ ", 4);
-		
+
 		input = read_line(&i_eof);
-		
+
 		if (i_eof != -1)
 		{
 			input = without_comment(input);

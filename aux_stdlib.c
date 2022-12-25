@@ -51,7 +51,7 @@ char *aux_itoa(int n)
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * (lenght + 1));
-	
+
 	if (buffer == 0)
 
 		return (NULL);
@@ -95,6 +95,7 @@ char *aux_itoa(int n)
 int _atoi(char *s)
 {
 	unsigned int count = 0, size = 0, oi = 0, pn = 1, m = 1, i;
+
 	while (*(s + count) != '\0')
 	{
 

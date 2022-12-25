@@ -15,20 +15,16 @@ int is_cdir(char *path, int *i)
 	{
 		*i += 1;
 	}
-
 	if (path[*i])
 		*i += 1;
 	return (0);
 }
-
 /**
- * _which - locates a command
- *
+ * _which - locates a commad
  * @cmd: command name
  * @_environ: environment variable
  * Return: location of the command.
  */
-
 char *_which(char *cmd, char **_environ)
 {
 	char *path, *ptr_path, *token_path, *dir;
@@ -41,25 +37,19 @@ char *_which(char *cmd, char **_environ)
 		ptr_path = _strdup(path);
 		len_cmd = _strlen(cmd);
 		token_path = _strtok(ptr_path, ":");
-		
 		i = 0;
-		
+
 		while (token_path != NULL)
 		{
 			if (is_cdir(path, &i))
-
 				if (stat(cmd, &st) == 0)
-
 					return (cmd);
-
 			len_dir = _strlen(token_path);
-
 			dir = malloc(len_dir + len_cmd + 2);
 			_strcpy(dir, token_path);
 			_strcat(dir, "/");
 			_strcat(dir, cmd);
 			_strcat(dir, "\0");
-			
 			if (stat(dir, &st) == 0)
 			{
 				free(ptr_path);
@@ -68,7 +58,6 @@ char *_which(char *cmd, char **_environ)
 			free(dir);
 			token_path = _strtok(NULL, ":");
 		}
-
 		free(ptr_path);
 		if (stat(cmd, &st) == 0)
 			return (cmd);
@@ -79,7 +68,6 @@ char *_which(char *cmd, char **_environ)
 			return (cmd);
 	return (NULL);
 }
-
 /**
  * is_executable - determines if is an executable
  *
@@ -91,7 +79,7 @@ int is_executable(data_shell *datash)
 	struct stat st;
 	int i;
 	char *input;
-	
+
 	input = datash->args[0];
 	for (i = 0; input[i]; i++)
 	{
@@ -124,15 +112,12 @@ int is_executable(data_shell *datash)
 	get_error(datash, 127);
 	return (-1);
 }
-
 /**
  * check_error_cmd - verifies if user has permissions to access
- *
  * @dir: destination directory
  * @datash: data structure
  * Return: 1 if there is an error, 0 if not
  */
-
 int check_error_cmd(char *dir, data_shell *datash)
 {
 	if (dir == NULL)
@@ -140,9 +125,7 @@ int check_error_cmd(char *dir, data_shell *datash)
 		get_error(datash, 127);
 		return (1);
 	}
-
 	if (_strcmp(datash->args[0], dir) != 0)
-
 	{
 		if (access(dir, X_OK) == -1)
 		{
@@ -158,12 +141,10 @@ int check_error_cmd(char *dir, data_shell *datash)
 		{
 			get_error(datash, 126);
 			return (1);
-
 		}
 	}
 	return (0);
 }
-
 /**
  * cmd_exec - executes command lines
  *
@@ -188,9 +169,7 @@ int cmd_exec(data_shell *datash)
 		dir = _which(datash->args[0], datash->_environ);
 		if (check_error_cmd(dir, datash) == 1)
 			return (1);
-
 	}
-
 	pd = fork();
 	if (pd == 0)
 	{
@@ -205,12 +184,10 @@ int cmd_exec(data_shell *datash)
 		perror(datash->av[0]);
 		return (1);
 	}
-
 	else
 	{
 		do {
 			wpd = waitpid(pd, &state, WUNTRACED);
-
 		} while (!WIFEXITED(state) && !WIFSIGNALED(state));
 	}
 	datash->status = state / 256;

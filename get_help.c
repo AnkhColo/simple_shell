@@ -6,7 +6,7 @@
  * Return: Return 0
 */
 int get_help(data_shell *datash)
-	
+
 {
 	if (datash->args[1] == 0)
 		aux_help_general();

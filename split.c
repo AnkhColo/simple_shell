@@ -11,7 +11,7 @@
 char *swap_char(char *input, int bool)
 {
 	int i;
-	
+
 	if (bool == 0)
 	{
 		for (i = 0; input[i]; i++)
@@ -138,7 +138,7 @@ int split_commands(data_shell *datash, char *input)
 
 	sep_list *head_s, *list_s;
 	line_list *head_l, *list_l;
-	
+
 	int loop;
 
 	head_s = NULL;
@@ -166,7 +166,7 @@ int split_commands(data_shell *datash, char *input)
 	}
 	free_sep_list(&head_s);
 	free_line_list(&head_l);
-	
+
 	if (loop == 0)
 		return (0);
 	return (1);
@@ -186,7 +186,7 @@ char **split_line(char *input)
 	size_t i;
 	char **tokens;
 	char *token;
-	
+
 	bsize = TOK_BUFSIZE;
 	tokens = malloc(sizeof(char *) * (bsize));
 	if (tokens == NULL)

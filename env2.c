@@ -39,6 +39,7 @@ void set_env(char *name, char *value, data_shell *datash)
 {
 	int i;
 	char *var_env, *name_env;
+
 	for (i = 0; datash->_environ[i]; i++)
 	{
 		var_env = _strdup(datash->_environ[i]);
@@ -115,7 +116,6 @@ int _unsetenv(data_shell *datash)
 		get_error(datash, -1);
 		return (1);
 	}
-
 	realloc_environ = malloc(sizeof(char *) * (i));
 	for (i = j = 0; datash->_environ[i]; i++)
 	{
