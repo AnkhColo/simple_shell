@@ -13,7 +13,7 @@
 char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 {
 	char *illegal_flag;
-	
+
 	_strcpy(error, datash->av[0]);
 	_strcat(error, ": ");
 	_strcat(error, ver_str);
@@ -47,7 +47,7 @@ char *error_get_cd(data_shell *datash
 {
 	int length, len_id;
 	char *error, *ver_str, *msg;
-	
+
 	ver_str = aux_itoa(datash->counter);
 	if (datash->args[1][0] == '-')
 	{
