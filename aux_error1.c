@@ -37,6 +37,7 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 	_strcat(error, "\0");
 	return (error);
 }
+
 /**
  * error_get_cd - error message for cd command in get_cd
  * @datash: data relevant (directory)
